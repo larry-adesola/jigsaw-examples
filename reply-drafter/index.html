@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Reply drafter</title>
+<style>
+  body { font: 16px/1.5 system-ui, sans-serif; max-width: 34rem; margin: 3rem auto; padding: 0 1rem; color: #14161A; }
+  h1 { letter-spacing: -.02em; margin-bottom: .25rem; }
+  #who { color: #6B7078; margin-top: 0; }
+  form { display: flex; gap: .5rem; margin: 1.5rem 0 1rem; flex-wrap: wrap; }
+  form[hidden] { display: none; }
+  input, select, textarea, button { font: inherit; padding: .5rem .7rem; border-radius: 8px; border: 1px solid #DCDEE2; }
+  button { background: #14161A; color: #fff; border-color: #14161A; cursor: pointer; }
+  ul { list-style: none; padding: 0; }
+  li { display: flex; gap: .75rem; align-items: center; padding: .6rem 0; border-top: 1px solid #DCDEE2; }
+  li span { flex: 1; }
+  li small { color: #6B7078; }
+  li button { background: none; color: #6B7078; border: 0; }
+  #problem { color: #B3261E; min-height: 1.5em; }
+  form { flex-direction: column; }
+  textarea { min-height: 8rem; resize: vertical; }
+  form button { align-self: flex-start; }
+  #draft { white-space: pre-wrap; border-top: 1px solid #DCDEE2; padding-top: 1rem; }
+</style>
+</head>
+<body>
+<h1>Reply drafter</h1>
+<p id="who">Loading…</p>
+<form id="ask">
+  <textarea name="message" aria-label="The message you received" placeholder="Paste the message you received" required></textarea>
+  <button>Draft a reply</button>
+</form>
+<p id="problem" role="alert"></p>
+<p id="draft" aria-live="polite"></p>
+<script src="app.js"></script>
+</body>
+</html>

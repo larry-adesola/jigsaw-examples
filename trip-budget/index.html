@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trip budget</title>
+<style>
+  body { font: 16px/1.5 system-ui, sans-serif; max-width: 34rem; margin: 3rem auto; padding: 0 1rem; color: #14161A; }
+  h1 { letter-spacing: -.02em; margin-bottom: .25rem; }
+  #who { color: #6B7078; margin-top: 0; }
+  form { display: flex; gap: .5rem; margin: 1.5rem 0 1rem; flex-wrap: wrap; }
+  form[hidden] { display: none; }
+  input, select, textarea, button { font: inherit; padding: .5rem .7rem; border-radius: 8px; border: 1px solid #DCDEE2; }
+  button { background: #14161A; color: #fff; border-color: #14161A; cursor: pointer; }
+  ul { list-style: none; padding: 0; }
+  li { display: flex; gap: .75rem; align-items: center; padding: .6rem 0; border-top: 1px solid #DCDEE2; }
+  li span { flex: 1; }
+  li small { color: #6B7078; }
+  li button { background: none; color: #6B7078; border: 0; }
+  #problem { color: #B3261E; min-height: 1.5em; }
+  input[name=what] { flex: 1; min-width: 8rem; }
+  input[type=number] { width: 7rem; }
+  #sums { display: flex; gap: 1.5rem; margin: 1rem 0 0; }
+  #sums div { flex: 1; }
+  #sums dt { color: #6B7078; font-size: .875rem; }
+  #sums dd { margin: 0; font-size: 1.5rem; font-variant-numeric: tabular-nums; }
+  li strong { font-variant-numeric: tabular-nums; }
+</style>
+</head>
+<body>
+<h1>Trip budget</h1>
+<p id="who">Loading…</p>
+<dl id="sums">
+  <div><dt>Budget</dt><dd id="budget">–</dd></div>
+  <div><dt>Spent</dt><dd id="spent">–</dd></div>
+  <div><dt>Left</dt><dd id="left">–</dd></div>
+</dl>
+<form id="set" hidden>
+  <input name="amount" aria-label="Budget" type="number" min="0" step="0.01" placeholder="Budget" required>
+  <button>Set budget</button>
+</form>
+<form id="add" hidden>
+  <input name="what" aria-label="What it was for" placeholder="What it was for" required>
+  <input name="amount" aria-label="Amount" type="number" min="0" step="0.01" placeholder="Amount" required>
+  <button>Add expense</button>
+</form>
+<p id="problem" role="alert"></p>
+<ul id="expenses"></ul>
+<script src="app.js"></script>
+</body>
+</html>

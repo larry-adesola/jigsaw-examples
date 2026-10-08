@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stock count</title>
+<style>
+  body { font: 16px/1.5 system-ui, sans-serif; max-width: 34rem; margin: 3rem auto; padding: 0 1rem; color: #14161A; }
+  h1 { letter-spacing: -.02em; margin-bottom: .25rem; }
+  #who { color: #6B7078; margin-top: 0; }
+  form { display: flex; gap: .5rem; margin: 1.5rem 0 1rem; flex-wrap: wrap; }
+  form[hidden] { display: none; }
+  input, select, textarea, button { font: inherit; padding: .5rem .7rem; border-radius: 8px; border: 1px solid #DCDEE2; }
+  button { background: #14161A; color: #fff; border-color: #14161A; cursor: pointer; }
+  ul { list-style: none; padding: 0; }
+  li { display: flex; gap: .75rem; align-items: center; padding: .6rem 0; border-top: 1px solid #DCDEE2; }
+  li span { flex: 1; }
+  li small { color: #6B7078; }
+  li button { background: none; color: #6B7078; border: 0; }
+  #problem { color: #B3261E; min-height: 1.5em; }
+  input[name=name] { flex: 1; min-width: 8rem; }
+  input[name=count] { width: 6rem; }
+  li strong { min-width: 2.5rem; text-align: right; font-variant-numeric: tabular-nums; }
+  li button.step { border: 1px solid #DCDEE2; color: #14161A; width: 2.2rem; }
+</style>
+</head>
+<body>
+<h1>Stock count</h1>
+<p id="who">Loading…</p>
+<form id="add" hidden>
+  <input name="name" aria-label="Item" placeholder="Item" required>
+  <input name="count" aria-label="Count" type="number" min="0" step="1" value="0" required>
+  <button>Add item</button>
+</form>
+<p id="problem" role="alert"></p>
+<ul id="items"></ul>
+<script src="app.js"></script>
+</body>
+</html>
